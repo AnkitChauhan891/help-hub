@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "feb50ec2-da2e-4f2c-940f-f5fafd3e4fa2",
+		"name": "help_hub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user_ragister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"<b> Yash Chauhan </b>\",\n    \"email\": \"yash15.chauhan@gmail.com\",\n    \"password\": \"Password@1\",\n    \"invitation_code\": \"\",\n    \"admin_secert_key\": \"vfs324\",\n    \"company_name\": \"OnPrintShop15\",\n    \"billing_reference\": \"#12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"yash15.chauhan@gmail.com\",\n    \"password\": \"Password@1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_me",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiIFlhc2ggQ2hhdWhhbiAiLCJlbWFpbCI6Inlhc2gxMS5jaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3ODI1NTg0MjksImV4cCI6MTc4MjU2MjAyOX0.lXN9V3ktMYQVxamqntN4WRtO3q-gYZZhq2XzOTR8cWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"yash11.chauhan@gmail.com\",\n    \"password\": \"Password@1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3030/api/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_specific_client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmEzZmMzNDhjYjMwZTY0ZDkxZmRlYjM4IiwibmFtZSI6IiBZYXNoIENoYXVoYW4gIiwiZW1haWwiOiJ5YXNoMTMuY2hhdWhhbkBnbWFpbC5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzgyNTY0Mzc5LCJleHAiOjE3ODI1Njc5Nzl9.2xoiH5L6MMSWHPCiUDBCuWeMjH6lnZUJWd_10uf6GLE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/api/clients/6a3fc348cb30e64d91fdeb39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"clients",
+						"6a3fc348cb30e64d91fdeb39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmEzZmNmNTQ3YzQ4ZGIxODc5NWVjZjg0IiwibmFtZSI6IiBZYXNoIENoYXVoYW4gIiwiZW1haWwiOiJ5YXNoMTUuY2hhdWhhbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODI1NjY3NjUsImV4cCI6MTc4MjU3MDM2NX0.DE-eoLJ9pDvR3hAueX9GE2vnyb9kbOqUZLYOKf9uHBc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/api/clients?page=1&limit=10&is_verified=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"clients"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "is_verified",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifiy_client_acount",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmEzZmNmNTQ3YzQ4ZGIxODc5NWVjZjg0IiwibmFtZSI6IiBZYXNoIENoYXVoYW4gIiwiZW1haWwiOiJ5YXNoMTUuY2hhdWhhbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODI1NjY3NjUsImV4cCI6MTc4MjU3MDM2NX0.DE-eoLJ9pDvR3hAueX9GE2vnyb9kbOqUZLYOKf9uHBc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/api/clients/6a3fa667b4fa74ef56c134cc/verify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"clients",
+						"6a3fa667b4fa74ef56c134cc",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deactivate_client_account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmEzZmNmNTQ3YzQ4ZGIxODc5NWVjZjg0IiwibmFtZSI6IiBZYXNoIENoYXVoYW4gIiwiZW1haWwiOiJ5YXNoMTUuY2hhdWhhbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODI1NjY3NjUsImV4cCI6MTc4MjU3MDM2NX0.DE-eoLJ9pDvR3hAueX9GE2vnyb9kbOqUZLYOKf9uHBc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3030/api/clients/6a3fa3219fb2c18840005070/deactivate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"clients",
+						"6a3fa3219fb2c18840005070",
+						"deactivate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
